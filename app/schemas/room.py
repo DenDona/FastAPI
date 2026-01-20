@@ -7,8 +7,11 @@ class RoomCreate(BaseModel):
     capacity: Annotated[int, Field(gt=0, description="Вместимость должна быть больше 0")]
     has_projector: bool
 
-class RoomResponse(RoomCreate):
+class RoomResponse(BaseModel):
     id: int
+    name: str
+    capacity: int
+    has_projector: bool
     created_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
