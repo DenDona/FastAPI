@@ -1,5 +1,5 @@
 from sqlalchemy import String, Integer, Boolean, DateTime, func
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from .base import Base
 
 
@@ -14,4 +14,11 @@ class Room(Base):
         DateTime(timezone=True),
         server_default=func.now(),
         nullable=False
+    )
+
+
+    bookings: Mapped[list["Booking"]] = relationship(
+        "Booking",
+        back_populates="room",
+        cascade="all, delete-orphan"
     )
