@@ -31,6 +31,6 @@ async def get_room_by_id(session: AsyncSession, room_id: int) -> Room:
     if not room:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail="Room not found"
+            detail="Комната не найдена"
         )
     return room
