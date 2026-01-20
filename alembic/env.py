@@ -12,7 +12,7 @@ load_dotenv()
 
 from app.models.base import Base
 from app.models.room import Room
-# from app.models.booking import Booking
+from app.models.booking import Booking
 
 config = context.config
 if config.config_file_name is not None:
