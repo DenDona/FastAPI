@@ -9,10 +9,5 @@ app = FastAPI()
 app.include_router(rooms_router)
 app.include_router(booking_router)
 
-
-@app.get("/")
-def hello_index():
-    return {"message": "Hello index!"}
-
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)
