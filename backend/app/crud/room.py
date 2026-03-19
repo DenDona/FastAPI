@@ -2,8 +2,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.exc import IntegrityError
 from fastapi import HTTPException, status
-from app.models import Room
-from app.schemas import RoomCreate
+from backend.app.models import Room
+from backend.app.schemas import RoomCreate
 
 async def create_room(session: AsyncSession, room_in: RoomCreate) -> Room:
     room = Room(**room_in.model_dump())

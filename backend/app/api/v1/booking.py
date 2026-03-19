@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import List, Optional
-from app.crud import (
+from backend.app.crud import (
     create_booking,
     get_booking_list,
     get_booking_by_id
 )
-from app.schemas import BookingCreate, BookingResponse
-from app.database.session import get_db
+from backend.app.schemas import BookingCreate, BookingResponse
+from backend.app.database.session import get_db
 
 router = APIRouter(prefix="/bookings", tags=["Bookings"])
 
@@ -56,7 +56,7 @@ async def delete_booking(
     db: AsyncSession = Depends(get_db)
 ):
     from sqlalchemy.future import select
-    from app.models import Booking
+    from backend.app.models import Booking
 
     result = await db.execute(select(Booking).where(Booking.id == booking_id))
     booking = result.scalar_one_or_none()

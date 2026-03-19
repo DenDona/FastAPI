@@ -2,10 +2,10 @@ from fastapi import APIRouter, Depends, Query, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from typing import List, Optional
-from app.models import Room
-from app.schemas import RoomCreate, RoomResponse
-from app.database.session import get_db
-from app.crud import create_room, get_room_by_id
+from backend.app.models import Room
+from backend.app.schemas import RoomCreate, RoomResponse
+from backend.app.database.session import get_db
+from backend.app.crud import create_room, get_room_by_id
 
 router = APIRouter(prefix="/rooms", tags=["Rooms"])
 

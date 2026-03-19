@@ -7,7 +7,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копируем весь проект
-COPY . .
+COPY .. .
 
 # Копируем скрипт запуска и делаем его исполняемым
 COPY start.sh .
