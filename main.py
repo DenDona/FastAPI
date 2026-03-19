@@ -5,7 +5,9 @@ from fastapi import FastAPI
 from app.api.v1.room import router as rooms_router
 from app.api.v1.booking import router as booking_router
 
-app = FastAPI()
+app = FastAPI(
+    root_path="https://my-api.trycloudflare.com",
+)
 app.include_router(rooms_router)
 app.include_router(booking_router)
 

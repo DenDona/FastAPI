@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings
 from pydantic import PostgresDsn, computed_field
 
+
 class Settings(BaseSettings):
     DB_USER: str
     DB_PASSWORD: str
@@ -19,5 +20,6 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+
 
 settings = Settings()
