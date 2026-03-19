@@ -1,45 +1,40 @@
-import { useState, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import { roomAPI } from '../api/client'
 
-export function useRooms(filters = {}) {
+export function useRooms(initialFilters = {}) {
   const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [filters, setFilters] = useState(initialFilters)
 
-  useEffect(() => {
-    let isMounted = true
-
-    const fetchRooms = async () => {
-      try {
-        setLoading(true)
-        setError(null)
-        const params = Object.fromEntries(
-          Object.entries(filters).filter(([_, v]) => v != null && v !== '')
-        )
-        const response = await roomAPI.getAll(params)
-
-        if (isMounted) {
-          setData(response.data)
-        }
-      } catch (err) {
-        if (isMounted) {
-          setError(err.response?.data?.detail || err.message || 'Ошибка загрузки')
-        }
-      } finally {
-        if (isMounted) {
-          setLoading(false)
-        }
-      }
+  const fetchRooms = useCallback(async () => {
+    try {
+      setLoading(true)
+      setError(null)
+      const params = Object.fromEntries(
+        Object.entries(filters).filter(([_, v]) => v != null && v !== '')
+      )
+      const response = await roomAPI.getAll(params)
+      setData(response.data)
+    } catch (err) {
+      setError(err.response?.data?.detail || err.message || 'Ошибка загрузки')
+    } finally {
+      setLoading(false)
     }
+  }, [filters])
 
+  // Загружаем один раз при монтировании
+  useState(() => {
     fetchRooms()
+  })
 
-    return () => {
-      isMounted = false
-    }
-  }, [JSON.stringify(filters)])
-
-  return { data, loading, error, refetch: () => {} }
+  return {
+    data,
+    loading,
+    error,
+    refetch: fetchRooms,
+    setFilters
+  }
 }
 
 export default useRooms

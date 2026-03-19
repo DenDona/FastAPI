@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20e17b20-db20-4e40-a115-ea1af4d4c252" name="Changes" comment="fix cfg">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="20e17b20-db20-4e40-a115-ea1af4d4c252" name="Changes" comment="fix cfg" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,7 +210,7 @@
       <workItem from="1770011635879" duration="1083000" />
       <workItem from="1770035065256" duration="851000" />
       <workItem from="1773679987254" duration="22000" />
-      <workItem from="1773939496462" duration="12957000" />
+      <workItem from="1773939496462" duration="13271000" />
     </task>
     <task id="LOCAL-00001" summary="added .gitignore">
       <option name="closed" value="true" />
