@@ -13,10 +13,11 @@ class Settings(BaseSettings):
 
     @computed_field
     @property
-    def effective_database_url(self) -> PostgresDsn:
-        if self.DATABASE_URL:
-            return self.DATABASE_URL
-        return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
+    def effective_database_url(self) -> str:
+        url = self.DATABASE_URL
+        if url.startswith("postgres://") or url.startswith("postgresql://"):
+            url = url.replace("postgres://", "postgresql+asyncpg://", 1)
+        return url
 
     class Config:
         env_file = ".env"
