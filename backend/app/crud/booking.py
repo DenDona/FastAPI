@@ -3,8 +3,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import and_
 from fastapi import HTTPException, status
-from backend.app.models import Booking, Room
-from backend.app.schemas import BookingCreate
+from app.models import Booking, Room
+from app.schemas import BookingCreate
 
 async def create_booking(session: AsyncSession, booking_in: BookingCreate) -> Booking:
     room_result = await session.execute(select(Room).where(Room.id == booking_in.room_id))

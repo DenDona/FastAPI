@@ -11,7 +11,7 @@ from alembic import context
 print("🚀 Alembic env.py loaded", file=sys.stderr)
 print(f"🔍 DATABASE_URL from env: {'SET' if os.getenv('DATABASE_URL') else 'NOT SET'}", file=sys.stderr)
 
-from backend.app.models.base import Base
+from app.models.base import Base
 
 target_metadata = Base.metadata
 
