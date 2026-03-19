@@ -1,12 +1,10 @@
 import os
 import sys
 from logging.config import fileConfig
-
 from sqlalchemy import create_engine, pool
 from alembic import context
 
-print("🚀 Alembic env.py loaded (sync for migrations)", file=sys.stderr)
-print(f"🔍 DATABASE_URL from env: {'SET' if os.getenv('DATABASE_URL') else 'NOT SET'}", file=sys.stderr)
+print("🚀 Alembic env.py loaded (SYNC for migrations)", file=sys.stderr)
 
 from app.models.base import Base
 from app.models.room import Room
@@ -18,18 +16,18 @@ if config.config_file_name is not None:
 
 target_metadata = Base.metadata
 
-# Получаем DATABASE_URL
+# Получаем DATABASE_URL из окружения
 DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
     raise ValueError("❌ DATABASE_URL not set")
 
-# 🔧 Конвертируем в формат для psycopg2
+# 🔧 Конвертируем в формат для psycopg2 (убираем +asyncpg)
 if DATABASE_URL.startswith("postgresql+asyncpg://"):
     DATABASE_URL = DATABASE_URL.replace("postgresql+asyncpg://", "postgresql://", 1)
 elif DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
-# Добавляем SSL
+# Добавляем SSL для Render
 if "?" not in DATABASE_URL:
     DATABASE_URL += "?sslmode=require"
 else:
@@ -45,7 +43,7 @@ def run_migrations_offline():
 
 
 def run_migrations_online():
-    print("🌐 Running online migrations (sync)", file=sys.stderr)
+    print("🌐 Running migrations (sync)", file=sys.stderr)
 
     connectable = create_engine(
         DATABASE_URL,
