@@ -2,9 +2,16 @@ FROM python:3.13-slim
 
 WORKDIR /app
 
-# Копируем ВСЁ из корня проекта в /app
-COPY . .
-
+# Копируем зависимости и устанавливаем их
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Копируем весь проект
+COPY . .
+
+# Копируем скрипт запуска и делаем его исполняемым
+COPY start.sh .
+RUN chmod +x start.sh
+
+# Запускаем скрипт (CMD переопределяется в Render, если нужно)
+CMD ["./start.sh"]
