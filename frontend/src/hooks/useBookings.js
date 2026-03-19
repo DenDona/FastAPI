@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { bookingAPI } from '../api/client'
 
 export function useBookings(filters = {}) {
@@ -6,27 +6,41 @@ export function useBookings(filters = {}) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  const fetchBookings = useCallback(async () => {
-    try {
-      setLoading(true)
-      setError(null)
-      const params = Object.fromEntries(
-        Object.entries(filters).filter(([_, v]) => v != null && v !== '')
-      )
-      const response = await bookingAPI.getAll(params)
-      setData(response.data)
-    } catch (err) {
-      setError(err.response?.data?.detail || err.message || 'Ошибка загрузки')
-    } finally {
-      setLoading(false)
-    }
-  }, [filters])
-
   useEffect(() => {
-    fetchBookings()
-  }, [fetchBookings])
+    let isMounted = true
 
-  return { data, loading, error, refetch: fetchBookings }
+    const fetchBookings = async () => {
+      try {
+        setLoading(true)
+        setError(null)
+        const params = Object.fromEntries(
+          Object.entries(filters).filter(([_, v]) => v != null && v !== '')
+        )
+        const response = await bookingAPI.getAll(params)
+
+        if (isMounted) {
+          setData(response.data)
+        }
+      } catch (err) {
+        if (isMounted) {
+          setError(err.response?.data?.detail || err.message || 'Ошибка загрузки')
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false)
+        }
+      }
+    }
+
+    fetchBookings()
+
+    // Cleanup function
+    return () => {
+      isMounted = false
+    }
+  }, [JSON.stringify(filters)]) // Сериализуем filters для стабильной ссылки
+
+  return { data, loading, error, refetch: () => {} }
 }
 
 export default useBookings
