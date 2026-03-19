@@ -8,10 +8,14 @@ from app.api.v1.booking import router as booking_router
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://my-app-frontend.onrender.com"],
+    allow_origins=[
+        "https://fastapi-front.onrender.com",  # Твой фронтенд
+        "http://localhost:5173",  # Для локальной разработки (Vite)
+        "http://localhost:3000",  # Для локальной разработки (Create React App)
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Разрешить все методы (GET, POST, PUT, DELETE...)
+    allow_headers=["*"],  # Разрешить все заголовки
 )
 app.include_router(rooms_router)
 app.include_router(booking_router)
