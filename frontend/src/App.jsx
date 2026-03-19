@@ -1,32 +1,55 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import RoomList from './components/rooms/RoomList';
-import BookingList from './components/bookings/BookingList';
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import RoomList from './components/rooms/RoomList'
+import BookingList from './components/bookings/BookingList'
 
-function Layout({ children }) {
+function Navbar() {
+  const location = useLocation()
+  
+  const navClass = (path) => 
+    `px-4 py-2 rounded-lg transition-colors ${
+      location.pathname === path 
+        ? 'bg-primary-600 text-white' 
+        : 'text-gray-600 hover:bg-gray-100'
+    }`
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow p-4">
-        <div className="max-w-6xl mx-auto flex gap-6">
-          <Link to="/" className="font-bold text-lg">🏢 RoomBooking</Link>
-          <Link to="/rooms" className="hover:text-blue-600">Комнаты</Link>
-          <Link to="/bookings" className="hover:text-blue-600">Бронирования</Link>
+    <nav className="bg-white shadow-sm border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center space-x-2">
+              <span className="text-2xl">🏢</span>
+              <span className="font-bold text-xl text-gray-800">RoomBooking</span>
+            </Link>
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <Link to="/" className={navClass('/')}>
+               Комнаты
+            </Link>
+            <Link to="/bookings" className={navClass('/bookings')}>
+              📅 Бронирования
+            </Link>
+          </div>
         </div>
-      </nav>
-      <main>{children}</main>
-    </div>
-  );
+      </div>
+    </nav>
+  )
 }
 
-export default function App() {
+function App() {
   return (
-    <BrowserRouter>
-      <Layout>
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Routes>
           <Route path="/" element={<RoomList />} />
           <Route path="/rooms" element={<RoomList />} />
           <Route path="/bookings" element={<BookingList />} />
         </Routes>
-      </Layout>
-    </BrowserRouter>
-  );
+      </main>
+    </div>
+  )
 }
+
+export default App
