@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="20e17b20-db20-4e40-a115-ea1af4d4c252" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/backend/app/database/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/api/client.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/bookings/BookingForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/rooms/RoomList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic.ini" beforeDir="false" afterPath="$PROJECT_DIR$/backend/alembic.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/alembic/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/script.py.mako" beforeDir="false" afterPath="$PROJECT_DIR$/backend/alembic/script.py.mako" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/cbb35b84d6cb_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/alembic/versions/cbb35b84d6cb_init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/e68147fd6ff0_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/alembic/versions/e68147fd6ff0_init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/v1/booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/room.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/v1/room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/v1/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/crud/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/crud/booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/room.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/crud/room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/database/session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/room.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/schemas/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/schemas/booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/room.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/schemas/room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/backend/start.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "DenDona"
+  }
+}]]></component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;DChernov&quot;,
+      &quot;fullname&quot;: &quot;Данила Чернов&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.alabuga.space/DChernov/fastapi_booking_rooms.git&quot;,
+    &quot;second&quot;: &quot;de82b6d3-c648-4561-84f4-07e4e0a69c15&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/DenDona/FastAPI.git",
+    "accountId": "17969197-a2fe-49a9-9fb9-6d4c22a867d7"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="38W7EHnfrHdRDD1PUtC9RzlCScz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main (2).executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/Pythons/jobs/FastAPI_13_01_26",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Pythons\Для работы\FastAPI_13_01_26\app\schemas" />
+      <recent name="D:\Pythons\Для работы\FastAPI_13_01_26\app\api\v1" />
+      <recent name="D:\Pythons\Для работы\FastAPI_13_01_26\app\crud" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Pythons\jobs\FastAPI_13_01_26\backend" />
+      <recent name="D:\Pythons\jobs\FastAPI_13_01_26" />
+      <recent name="D:\Pythons\Для работы\FastAPI 13.01.26\app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main (2)">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FastAPI_13_01_26" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="D:\Pythons\jobs\FastAPI_13_01_26\backend\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FastAPI_13_01_26" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="D:\Pythons\jobs\FastAPI_13_01_26\backend\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FastAPI_13_01_26" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="D:\Pythons\jobs\FastAPI_13_01_26\backend\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main (2)" />
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.29346.142" />
+        <option value="bundled-python-sdk-f2b7a9f6281b-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20e17b20-db20-4e40-a115-ea1af4d4c252" name="Changes" comment="" />
+      <created>1768903362239</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768903362239</updated>
+      <workItem from="1768903363251" duration="5000" />
+      <workItem from="1768903396387" duration="96000" />
+      <workItem from="1768903527730" duration="135000" />
+      <workItem from="1768903720271" duration="78000" />
+      <workItem from="1768903824226" duration="2952000" />
+      <workItem from="1768909535512" duration="3012000" />
+      <workItem from="1768912615764" duration="3678000" />
+      <workItem from="1768916397574" duration="798000" />
+      <workItem from="1768929604686" duration="3768000" />
+      <workItem from="1768933458052" duration="11544000" />
+      <workItem from="1769015541828" duration="641000" />
+      <workItem from="1769017087100" duration="3735000" />
+      <workItem from="1769062502951" duration="4606000" />
+      <workItem from="1769493328795" duration="2019000" />
+      <workItem from="1769496154908" duration="18000" />
+      <workItem from="1769515732000" duration="1594000" />
+      <workItem from="1769517346247" duration="1000" />
+      <workItem from="1769664851146" duration="2873000" />
+      <workItem from="1769676869184" duration="6565000" />
+      <workItem from="1770011635879" duration="1083000" />
+      <workItem from="1770035065256" duration="851000" />
+      <workItem from="1773679987254" duration="22000" />
+      <workItem from="1773939496462" duration="6864000" />
+    </task>
+    <task id="LOCAL-00001" summary="added .gitignore">
+      <option name="closed" value="true" />
+      <created>1768903659676</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1768903659676</updated>
+    </task>
+    <task id="LOCAL-00002" summary="created the application architecture">
+      <option name="closed" value="true" />
+      <created>1768906169588</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1768906169588</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added docker compose">
+      <option name="closed" value="true" />
+      <created>1768910168514</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1768910168514</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added docker compose">
+      <option name="closed" value="true" />
+      <created>1768914606380</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768914606380</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added runner server">
+      <option name="closed" value="true" />
+      <created>1768914631530</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768914631530</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added database">
+      <option name="closed" value="true" />
+      <created>1768937080478</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1768937080478</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed docker-compose.yml">
+      <option name="closed" value="true" />
+      <created>1768937109558</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1768937109558</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added model rooms">
+      <option name="closed" value="true" />
+      <created>1768937153868</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1768937153868</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added schemas rooms">
+      <option name="closed" value="true" />
+      <created>1768937164648</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1768937164648</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added crud and views rooms">
+      <option name="closed" value="true" />
+      <created>1768937182075</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1768937182075</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added model rooms">
+      <option name="closed" value="true" />
+      <created>1768938211650</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1768938211650</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added schemas rooms">
+      <option name="closed" value="true" />
+      <created>1768938219851</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1768938219852</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added crud and views rooms">
+      <option name="closed" value="true" />
+      <created>1768938246635</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1768938246635</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added routers in main.py">
+      <option name="closed" value="true" />
+      <created>1768938315098</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1768938315098</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added init imports">
+      <option name="closed" value="true" />
+      <created>1768938423144</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1768938423144</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added alembic and migrate rooms">
+      <option name="closed" value="true" />
+      <created>1768938491653</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1768938491653</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added requirements.txt">
+      <option name="closed" value="true" />
+      <created>1768938504148</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1768938504148</updated>
+    </task>
+    <task id="LOCAL-00018" summary="edited RoomResponse">
+      <option name="closed" value="true" />
+      <created>1768943742302</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943742302</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added back-populates">
+      <option name="closed" value="true" />
+      <created>1768943764848</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943764848</updated>
+    </task>
+    <task id="LOCAL-00020" summary="edit status error">
+      <option name="closed" value="true" />
+      <created>1768943786346</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943786346</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added router bookings">
+      <option name="closed" value="true" />
+      <created>1768943803469</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943803469</updated>
+    </task>
+    <task id="LOCAL-00022" summary="imported Booking">
+      <option name="closed" value="true" />
+      <created>1768943821704</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943821704</updated>
+    </task>
+    <task id="LOCAL-00023" summary="added schemas bookings">
+      <option name="closed" value="true" />
+      <created>1768943842444</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943842444</updated>
+    </task>
+    <task id="LOCAL-00024" summary="added models bookings">
+      <option name="closed" value="true" />
+      <created>1768943850578</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943850578</updated>
+    </task>
+    <task id="LOCAL-00025" summary="added crud bookings">
+      <option name="closed" value="true" />
+      <created>1768943863817</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943863817</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added views bookings">
+      <option name="closed" value="true" />
+      <created>1768943878468</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943878468</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added import bookings">
+      <option name="closed" value="true" />
+      <created>1768943892307</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943892307</updated>
+    </task>
+    <task id="LOCAL-00028" summary="migrate booking table">
+      <option name="closed" value="true" />
+      <created>1768943924221</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943924221</updated>
+    </task>
+    <task id="LOCAL-00029" summary="alembic file">
+      <option name="closed" value="true" />
+      <created>1768943937710</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1768943937710</updated>
+    </task>
+    <task id="LOCAL-00030" summary="init README.md">
+      <option name="closed" value="true" />
+      <created>1768944446713</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1768944446713</updated>
+    </task>
+    <task id="LOCAL-00031" summary="added .gitignore">
+      <option name="closed" value="true" />
+      <created>1768944546660</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1768944546660</updated>
+    </task>
+    <task id="LOCAL-00032" summary="delete router(Hello Index)">
+      <option name="closed" value="true" />
+      <created>1769063528822</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1769063528822</updated>
+    </task>
+    <task id="LOCAL-00033" summary="init">
+      <option name="closed" value="true" />
+      <created>1773946054267</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1773946054267</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added database" />
+    <MESSAGE value="fixed docker-compose.yml" />
+    <MESSAGE value="added model rooms" />
+    <MESSAGE value="added schemas rooms" />
+    <MESSAGE value="added crud and views rooms" />
+    <MESSAGE value="added routers in main.py" />
+    <MESSAGE value="added init imports" />
+    <MESSAGE value="added alembic and migrate rooms" />
+    <MESSAGE value="added requirements.txt" />
+    <MESSAGE value="edited RoomResponse" />
+    <MESSAGE value="added back-populates" />
+    <MESSAGE value="edit status error" />
+    <MESSAGE value="added router bookings" />
+    <MESSAGE value="imported Booking" />
+    <MESSAGE value="added schemas bookings" />
+    <MESSAGE value="added models bookings" />
+    <MESSAGE value="added crud bookings" />
+    <MESSAGE value="added views bookings" />
+    <MESSAGE value="added import bookings" />
+    <MESSAGE value="migrate booking table" />
+    <MESSAGE value="alembic file" />
+    <MESSAGE value="init README.md" />
+    <MESSAGE value="added .gitignore" />
+    <MESSAGE value="delete router(Hello Index)" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FastAPI_13_01_26$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1773939740830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/FastAPI_13_01_26$main.coverage" NAME="main Coverage Results" MODIFIED="1768912041078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+  </component>
+</project>

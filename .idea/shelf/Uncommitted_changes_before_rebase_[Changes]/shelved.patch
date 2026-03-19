@@ -1,0 +1,16 @@
+Index: docker-compose.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>version: '3.8'\r\n\r\nservices:\r\n  db:\r\n    image: postgres:17\r\n    restart: always\r\n    env_file:\r\n      - .env\r\n    environment:\r\n      POSTGRES_USER: ${DB_USER}\r\n      POSTGRES_PASSWORD: ${DB_PASSWORD}\r\n      POSTGRES_DB: ${DB_NAME}\r\n    ports:\r\n      - \"5432:5432\"\r\n    volumes:\r\n      - postgres_data:/var/lib/postgresql\r\n    healthcheck:\r\n      test: [\"CMD-SHELL\", \"pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}\"]\r\n      interval: 5s\r\n      timeout: 5s\r\n      retries: 5\r\n\r\n  web:\r\n    build: .\r\n    ports:\r\n      - \"8000:8000\"\r\n    env_file:\r\n      - .env\r\n    environment:\r\n      DATABASE_URL: ${DATABASE_URL}\r\n    depends_on:\r\n      db:\r\n        condition: service_healthy\r\n\r\nvolumes:\r\n  postgres_data:
+===================================================================
+diff --git a/docker-compose.yml b/docker-compose.yml
+--- a/docker-compose.yml	(revision 42a99eb2b12dcd1499e43ddf91e38e373e9686bc)
++++ b/docker-compose.yml	(date 1768915430883)
+@@ -10,6 +10,7 @@
+       POSTGRES_USER: ${DB_USER}
+       POSTGRES_PASSWORD: ${DB_PASSWORD}
+       POSTGRES_DB: ${DB_NAME}
++      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+     ports:
+       - "5432:5432"
+     volumes:
