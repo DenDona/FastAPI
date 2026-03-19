@@ -1,17 +1,12 @@
-FROM python:3.13-slim
+#!/bin/bash
+set -e  # Выход при любой ошибке
 
-WORKDIR /app
+echo "🚀 Running database migrations..."
 
-# Копируем зависимости и устанавливаем их
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Запускаем миграции через python -m (гарантированно найдёт alembic)
+python -m alembic upgrade head
 
-# Копируем весь проект
-COPY . .
+echo "✅ Migrations completed. Starting server..."
 
-# Копируем скрипт запуска и делаем его исполняемым
-COPY start.sh .
-RUN chmod +x start.sh
-
-# Запускаем скрипт (CMD переопределяется в Render, если нужно)
-CMD ["./start.sh"]
+# Запускаем приложение (exec заменяет процесс, чтобы правильно обрабатывать сигналы)
+exec python -m uvicorn main:app --host 0.0.0.0 --port "${PORT:-8000}"
