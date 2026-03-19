@@ -14,9 +14,13 @@ class Settings(BaseSettings):
     @computed_field
     @property
     def effective_database_url(self) -> str:
-        url = self.DATABASE_URL
+        # 🔥 Преобразуем PostgresDsn в строку
+        url = str(self.DATABASE_URL)
+
+        # Теперь можно использовать startswith/replace
         if url.startswith("postgres://") or url.startswith("postgresql://"):
             url = url.replace("postgres://", "postgresql+asyncpg://", 1)
+
         return url
 
     class Config:
