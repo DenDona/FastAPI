@@ -12,6 +12,7 @@ app.add_middleware(
         "https://fastapi-front.onrender.com",  # Твой фронтенд
         "http://localhost:5173",  # Для локальной разработки (Vite)
         "http://localhost:3000",  # Для локальной разработки (Create React App)
+        "http://localhost:8080"
     ],
     allow_credentials=True,
     allow_methods=["*"],  # Разрешить все методы (GET, POST, PUT, DELETE...)
